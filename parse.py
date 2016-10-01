@@ -28,25 +28,16 @@ def split(data, testRatio=0.2):
     return numpy.split(data, [splitIndex], axis=0)
 
 def splitLabels(data):
-    return data[:, 1:], data[:, :1]
+    return data[:, :-1], data[:, -1:]
 
 def shuffle(data):
     numpy.random.shuffle(data)
     return data
 
-def _grab(data, count):
+def grab(data, count):
     temp = data.copy()
     numpy.random.shuffle(temp)
-    if (count >= shape(temp)[0]):
-        return temp
-    else:
-        return numpy.split(temp, [count], axis=0)[0]
-
-def grab(data, count, cats):
-    result = _grab(data, count)
-    x, y = splitLabels(result)
-    y = nominalToVector(y, cats)
-    return x, y
+    return numpy.split(temp, [count], axis=0)[0]
 
 def nominalToVector(y, cats):
     dims = shape(y)
