@@ -10,7 +10,7 @@ def readCsv(filename):
 
     for line in file.readlines():
         items = line.strip().split(',')
-        items = map(float, items)
+        items = map(int, items)
         if len(items) == 0:
             print "Empty line"
             continue
@@ -63,7 +63,7 @@ def parse(filename, cats):
     data = shuffle(data)
 
     train, test = split(data)
+    trainX, trainY = splitLabels(train)
     testX, testY = splitLabels(test)
-    testY = nominalToVector(testY, cats)
 
-    return train, testX, testY
+    return trainX, trainY, testX, testY
