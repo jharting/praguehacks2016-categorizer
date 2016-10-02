@@ -6,6 +6,8 @@ This project is a prototype for
 * [mapasamospravy.cz](http://mapasamospravy.cz/)
 * [edesky.cz](https://edesky.cz/)
 
+Built during [Prague Hacks 2016](http://www.praguehacks.cz/)
+
 ## Setup
 
 Requirements:
