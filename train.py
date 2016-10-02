@@ -30,7 +30,7 @@ def train(model="categorizer", file_x="data-x.csv", file_y="data-y.csv"):
     print 'training set ' + str(shape(trainX)[0])
     print 'testing set ' + str(shape(testX)[0])
 
-    classifier = common.prepare_classifier("./" + model, featureCount)
+    classifier = common.prepare_classifier("./" + model + "-model", featureCount)
 
     print 'Training start'
     classifier.fit(x=trainX, y=trainY, steps=2000)

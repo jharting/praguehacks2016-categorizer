@@ -6,7 +6,7 @@ import common
 import sys
 
 def load_model(featureCount, category):
-    return common.prepare_classifier("./" + category, featureCount)
+    return common.prepare_classifier("./" + category "-model", featureCount)
 
 def run_model(data, category="categorizer"):
     model = load_model(shape(data)[1], category)
