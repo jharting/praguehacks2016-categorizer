@@ -1,6 +1,21 @@
 # Categorizer (a PragueHacks 2016 project)
 
-Simple classification engine for government/municipality documents built with [TensorFlow](https://github.com/tensorflow/tensorflow)
+Simple classification engine for government/municipality documents built with [TensorFlow](https://github.com/tensorflow/tensorflow) Documents are tagged based on occurrence of certain words and other characteristics of a document.
+
+This project is a prototype for
+* [mapasamospravy.cz](http://mapasamospravy.cz/)
+* [edesky.cz](https://edesky.cz/)
+
+## Setup
+
+Requirements:
+
+* bash
+* python 2.7
+* numpy
+* tensorflow 0.10.0 (does not work with 0.11.0rc0 due to https://github.com/tensorflow/tensorflow/issues/4715)
+
+## Run
 
 Prepare data:
 
