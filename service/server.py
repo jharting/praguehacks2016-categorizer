@@ -7,7 +7,13 @@ from numpy import mat
 sys.path.append('..')
 import common
 
-features = 277 # TODO
+
+import dataVector
+
+dV = dataVector.DataVector()
+features = len(dV.features_vec(' '))
+
+print 'feature vector length: {}'.format(features)
 
 def load_model(name):
     model = common.prepare_classifier('./models/' + name, features)
@@ -28,8 +34,7 @@ def load_models():
     return models
 
 def data_to_vector(data):
-    # TODO really implement text-to-feature-vector logic here!
-    return mat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.256348108539441,0.24955443375464484,0.0])
+    return mat(dV.features_vec(data))
 
 models = load_models()
 

@@ -17,6 +17,14 @@ Requirements:
 * numpy
 * tensorflow 0.10.0 (does not work with 0.11.0rc0 due to https://github.com/tensorflow/tensorflow/issues/4715)
 
+
+```bash
+sudo pip install numpy
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
+sudo pip install --upgrade $TF_BINARY_URL
+
+```
+
 ## Run
 
 Prepare data:
